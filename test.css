@@ -1,0 +1,127 @@
+body {
+	background-color: #f4f4f4;
+	color: #5a5656;
+	font-family: Papyrus;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+#fgt_pwd{
+	font-size: 12px;
+}
+
+a { 
+	text-decoration: none; 
+}
+
+h1 { 
+	font-size: 1em; 
+}
+
+h1, p {
+		margin-bottom: 15px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.uppercase { 
+	text-transform: uppercase;
+}
+
+#login {
+	margin: 50px auto;
+	width: 300px;
+}
+form fieldset input[type="text"], input[type="password"] {
+	background-color: #e5e5e5;
+	border: none;
+	-webkit-border-radius: 3px;
+	color: #808080;
+	font-family: Papyrus;
+	font-weight: bold;
+	font-size: 17px;
+	height: 50px;
+	padding: 0px 10px;
+	width: 280px;
+}
+
+form fieldset input[type="submit"] {
+	background-color: #008dde;
+	border: none;
+	-webkit-border-radius: 3px;
+	color: #f4f4f4;
+	cursor: pointer;
+	font-family: Papyrus;
+	font-weight: bold;
+	height: 50px;
+	text-transform: uppercase;
+	width: 300px;
+}
+
+form fieldset a {
+	color: #5a5656;
+	font-size: 10px;
+}
+
+form fieldset a:hover { 
+	text-decoration: underline; 
+}
+
+.btn_round {
+	background-color: #5a5656;
+	-webkit-border-radius: 50%;
+	color: #f4f4f4;
+	display: block;
+	font-size: 12px;
+	height: 50px;
+	line-height: 50px;
+	margin: 30px 125px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50px;
+}
+
+.facebook_ahead {
+	background-color: #0064ab;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+.facebook {
+	background-color: #0079ce;
+	border: none;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	width: 250px;
+}
+
+.twitter_ahead {
+	background-color: #189bcb;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+.twitter {
+	background-color: #1bb2e9;
+	border: none;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	width: 250px;
+}
