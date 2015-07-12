@@ -1,5 +1,5 @@
-var testArray = [];
-testArray= [{  
+var feedArray = [];
+feedArray= [{  
             "post_date":"Jun 20",
             "post_id":"post_01",
             "display_name":"greg",
@@ -224,60 +224,3 @@ testArray= [{
             "post_content":"xyz abc def",
             "upvotes":3
         }];
-
-//console.log(testArray);
-
-//Print max upvote value present in the array of objects using for-loop
-var i;
-var max=0;
-for(i=0; i<testArray.length;i++){
-	if(max<=testArray[i].upvotes)
-		max=testArray[i].upvotes;
-}
-
-//console.log(max);
-
-// Printing upvotes in the array of objects using map with external function
-function printEle(ele){
-	console.log(ele.upvotes);
-}
-
-testArray.map(printEle)
-
-// Printing upvotes in the array of objects using map with anonymous function
-testArray.map(function(eachElement){
-	console.log(eachElement.upvotes);
-})
-
-//Printing min upvote value present in the array of objects using for-loop
-var min=testArray[0].upvotes;
-for(i=0; i<testArray.length;i++){
-	if(min>testArray[i].upvotes)
-		min=testArray[i].upvotes;
-}
-//console.log(min);
-
-//Printing min upvote value present in the array of objects using map
-var mini=testArray[0].upvotes;
-testArray.map(function(singleElement) {
-	if(mini>singleElement.upvotes)
-		mini=singleElement.upvotes;
-})
-// console.log(mini);
-
-//Increasing the least upvote in the array object by 1 using for-loop
-for(i=0; i<testArray.length;i++){
-	if(min==testArray[i].upvotes)
-		testArray[i].upvotes++;
-}
-
-// console.log(testArray);
-
-//Increasing the least upvote in the array object by 1 using map
-
-testArray.map(function(allElement){
-	if(mini==allElement.upvotes)
-		allElement.upvotes++;
-})
-
-// console.log(testArray);
