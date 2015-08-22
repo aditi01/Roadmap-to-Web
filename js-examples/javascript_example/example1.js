@@ -1,5 +1,4 @@
 
-
 //console.log(feedArray);
 
 //Print max upvote value present in the array of objects using for-loop
@@ -117,7 +116,66 @@ function observeMethod() {
 	testArray[4] = 10;
 }
 
+//To verify the functionality of filter
 
+function filterMethod() {
+	var testArray=[1,4,77,12,66,101,10];
+	function smallElement(smallValue) {
+		return(smallValue)<10;
+	}
+	var filteredElement=testArray.filter(smallElement);
+	console.log(filteredElement);
+}
+
+//To verify the functionality of filter using the json
+
+function filterMethodJ() {
+	var countOfNan=0;
+	function findElements(num) {
+		if(typeof(num.id)==='number' && !isNaN(num.id)) {
+			return true;
+		}
+		else{
+			countOfNan++;
+			return false;
+		}
+	}
+		var filterElement= feedArray.filter(findElements);
+		console.log(filterElement);
+		console.log("The number of NaN", countOfNan);
+}
+
+//To verify the functionality of forEach();
+
+function foreachMethod() {
+	function elementforEach(ele, index, array) {
+		console.log('feedArray['+index+']='+ele);
+	}
+	feedArray.forEach(elementforEach);
+}
+
+//To verify the functionality of join();
+
+function joinMethod() {
+	var a=['man', 'animan', 1, 2];
+	var b=a.join('*');
+	console.log(b);
+}
+
+//To verify the functionality of slice();
+
+function sliceMethod() {
+	var a=['man', 'animan', 1, 2, "This is a statement", 0.505, null, NaN];
+	console.log(a.slice(1,7));
+}
+
+//To verify the functionality of splice();
+
+function spliceMethod() {
+	var a=['man', 'animan', 1, 2, "This is a statement", 0.505, null, NaN];
+	var b=a.splice(1,2,'parrot', 1, 3, null);
+	console.log(b);	
+}
 //Execute the functions to see results -----
 
 //arrayMaxFor();
@@ -131,3 +189,9 @@ function observeMethod() {
 //arrayMinMap();
 //arrayMinFor();
 //observeMethod();
+// filterMethod();
+// filterMethodJ();
+// foreachMethod();
+// joinMethod();
+// sliceMethod();
+spliceMethod();
