@@ -6,7 +6,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":1
+            "upvotes":1,
+            id: 0
         },
         {  
             "post_date":"Jun 20",
@@ -15,7 +16,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":2
+            "upvotes":2,
+            id: 15
         },
         {  
             "post_date":"Jun 19",
@@ -24,7 +26,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Lifestyle",
             "post_content":"xyz abc def",
-            "upvotes":3
+            "upvotes":3,
+            id: -1
         },
         {  
             "post_date":"Jun 15",
@@ -33,7 +36,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":4
+            "upvotes":4,
+            id: NaN
         },
         {  
             "post_date":"May 29",
@@ -42,7 +46,8 @@ feedArray= [{
             "location_name": "Delhi",
             "channel_name": "Lifestyle",
             "post_content":"xyz abc def",
-            "upvotes":3
+            "upvotes":3,
+            id: "Is a statement"
         },
         {  
             "post_date":"May 23",
@@ -51,7 +56,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Science",
             "post_content":"xyz abc def",
-            "upvotes":4
+            "upvotes":4,
+            id: 'undefined'
         },
         {  
             "post_date":"May 21",
@@ -60,7 +66,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Science",
             "post_content":"xyz abc def",
-            "upvotes":3
+            "upvotes":3,
+            id: null
         },
         {  
             "post_date":"May 20",
@@ -69,7 +76,8 @@ feedArray= [{
             "location_name": "Delhi",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":1
+            "upvotes":1,
+            id: 82.8978
         },
         {  
             "post_date":"May 15",
@@ -87,7 +95,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":7
+            "upvotes":7,
+            id: 9
         },
         {  
             "post_date":"May 01",
@@ -96,7 +105,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":5
+            "upvotes":5,
+            id: NaN
         },
         {  
             "post_date":"Mar 19",
@@ -114,7 +124,8 @@ feedArray= [{
             "location_name": "Delhi",
             "channel_name": "Science",
             "post_content":"xyz abc def",
-            "upvotes":2
+            "upvotes":2,
+            id: 748
         },
         {  
             "post_date":"Mar 12",
@@ -132,7 +143,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":4
+            "upvotes":4,
+            id: 0.727
         },
         {  
             "post_date":"Feb 08",
@@ -141,7 +153,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":5
+            "upvotes":5,
+            id: null
         },
         {  
             "post_date":"Feb 07",
@@ -150,7 +163,8 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Arts",
             "post_content":"xyz abc def",
-            "upvotes":6
+            "upvotes":6,
+            id: 'statement'
         },
         {  
             "post_date":"Feb 06",
@@ -159,7 +173,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Lifestyle",
             "post_content":"xyz abc def",
-            "upvotes":1
+            "upvotes":1,
+            id: 4
         },
         {  
             "post_date":"Feb 05",
@@ -168,7 +183,8 @@ feedArray= [{
             "location_name": "Delhi",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":4
+            "upvotes":4,
+            id: NaN
         },
         {  
             "post_date":"Jan 22",
@@ -186,7 +202,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Lifestyle",
             "post_content":"xyz abc def",
-            "upvotes":2
+            "upvotes":2,
+            id: 2234
         },
         {  
             "post_date":"Jan 20",
@@ -195,7 +212,8 @@ feedArray= [{
             "location_name": "Delhi",
             "channel_name": "Lifestyle",
             "post_content":"xyz abc def",
-            "upvotes":4
+            "upvotes":4,
+            id: null
         },
         {  
             "post_date":"Jan 19",
@@ -213,7 +231,8 @@ feedArray= [{
             "location_name": "Mumbai",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":3
+            "upvotes":3,
+            id: 1.2
         },
         {  
             "post_date":"Jan 01",
@@ -222,5 +241,6 @@ feedArray= [{
             "location_name": "Bangalore",
             "channel_name": "Music",
             "post_content":"xyz abc def",
-            "upvotes":3
+            "upvotes":3,
+            id: NaN
         }];
