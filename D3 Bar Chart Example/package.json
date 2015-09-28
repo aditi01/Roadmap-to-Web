@@ -1,0 +1,9 @@
+{
+  "name": "d3_bar_chart",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.13.3",
+    "consolidate": "~0.13.1",
+    "handlebars": "~4.0.3"
+  }
+}

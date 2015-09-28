@@ -1,0 +1,6 @@
+----Instructions to run the code----
+
+1) Install node library
+2) Run: "npm install" (in the terminal of D3 Bar Chart Example directory)
+3) Run: nodejs server.js
+4) Open localhost://8000 in the browser to view the Bar graph
