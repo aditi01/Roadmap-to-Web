@@ -3,9 +3,8 @@ var url=require("url");
 var express = require("express");
 var consolidate=require("consolidate");//1
 var handlebars=require("handlebars");//2
-var bodyParser = require('body-parser');
-
-var router = require('./router');
+var bodyParser = require('body-parser'); 
+var router = require('./router'); //this require line of code refferes to the router code
 
 var app = express();
 app.use(bodyParser.urlencoded({
@@ -14,13 +13,13 @@ app.use(bodyParser.urlencoded({
              
             app.use(bodyParser.json({limit: '5mb'}));
 
-app.set('views', 'views');
-app.use(express.static('./public')); 
+app.set('views', 'views'); //Set the folder-name from where you serve the html page. 
+app.use(express.static('./public')); //setting the folder name (public) where all the static file is made available
 app.set('view engine','html');  //Set the folder-name from where you serve the html page.
 app.engine('html',consolidate.handlebars);
 var portNumber = 8000; //for locahost:8000
 
-http.createServer(app).listen(portNumber, function(){
+http.createServer(app).listen(portNumber, function(){ //creating the server which is listening to the port number:8000, and calls a function within in which calls the initialize(app) function in the router module
 	console.log('Server listening at port '+ portNumber);
 	router.initialize(app); //function defined in routes.js which is exported to be accessed by other modules
 });
