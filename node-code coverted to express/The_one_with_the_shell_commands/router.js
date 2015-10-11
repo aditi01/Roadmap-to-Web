@@ -3,7 +3,7 @@ var exec = require("child_process").exec;
 
 function initialize(app) {
 
-	console.log("About to route the pathname"+pathname);
+	console.log("About to route the pathname");
 	app.get('/', function(req, res) {  //app.get is used for rendering the html file in the broser when the "localhost:8000/" url is loaded
         console.log('request to / received');
         res.render("Shell.html"); //command to render the html page onto the browser
@@ -24,6 +24,6 @@ function initialize(app) {
 				});
 			}
     	});
-	}
+	});
 }
 exports.initialize = initialize; 
