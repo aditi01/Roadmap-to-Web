@@ -5,10 +5,10 @@ function postRequest() {
 
   $.ajax({
       type: "POST",
-      url: "/",
+      url: "/upload",
       data: obj,
       success: function(result) {
-        console.log(result);
+        document.getElementById("display").innerHTML=result.message+""+result.output;
       },
       dataType: "JSON",
       error: function (err) {

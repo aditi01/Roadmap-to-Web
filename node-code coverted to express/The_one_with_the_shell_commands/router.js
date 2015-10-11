@@ -1,4 +1,4 @@
-var querystring=require("querystring");
+// var querystring=require("querystring");
 var exec = require("child_process").exec;
 
 function initialize(app) {
@@ -11,14 +11,16 @@ function initialize(app) {
 
     app.post('/upload', function (req, res) { //app.post command is mainly used for the POST functionality to be executed by the AJAX call. This command is mainly used when user is sending data to the server
     	console.log("request for /upload recieved");
-    	var command=querystring.parse(postData).text;
-		console.log("The command sent is"+command);
-		exec(command, function(error, stdout, stderr) {
+  //   	var command=querystring.parse(postData).text;
+		// console.log("The command sent is"+command);
+
+		console.log(req.body);
+		exec(req.body.input, function(error, stdout, stderr) {
 			res.json({
 				message: 'The result for the command is:',
 				output: stdout
 			});
-			if(error) {
+			if(error) {	
 				res.json ({
 					output: stderr
 				});

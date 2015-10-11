@@ -3,10 +3,16 @@ var url=require("url");
 var express = require("express");
 var consolidate=require("consolidate");//1
 var handlebars=require("handlebars");//2
+var bodyParser = require('body-parser');
 
 var router = require('./router');
 
 var app = express();
+app.use(bodyParser.urlencoded({
+                extended: true,
+            }));
+             
+            app.use(bodyParser.json({limit: '5mb'}));
 
 app.set('views', 'views');
 app.use(express.static('./public')); 
