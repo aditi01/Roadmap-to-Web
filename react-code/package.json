@@ -1,0 +1,11 @@
+{
+  "name": "reactjs-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.13.3",
+    "consolidate": "~0.13.1",
+    "handlebars": "~4.0.3",
+    "body-parser": "~1.14.1",
+    "mongodb": "~2.0.46"
+  }
+}

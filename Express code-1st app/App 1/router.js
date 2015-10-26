@@ -1,7 +1,7 @@
 
 var exec = require("child_process").exec;
 
-function initialize(app) {
+function initialize(app, db) {
 
 	console.log("About to route the pathname");
 	//Setting up an event listener for GET request to '/' 
