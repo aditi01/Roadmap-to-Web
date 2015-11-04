@@ -9,6 +9,8 @@ var HelloMessage = React.createClass({ //creates a container HelloMessage, which
 
 ReactDOM.render(<HelloMessage name="Aditi"/>, document.getElementById("container")); //1.
 
+//Example to display the amount of seconds that were ellapsed after the page was loaded on the browser.
+
 var Timer = React.createClass({ //2.
 	getInitialState: function() { //is executed 1st, which returns the initial state, i.e., 0
 		return {secondsElapsed: 0};
@@ -27,6 +29,42 @@ var Timer = React.createClass({ //2.
 });
 
 ReactDOM.render(<Timer/>, document.getElementById("timer-container"));
+
+//A simple and a basic TODO application
+
+var TodoList = React.createClass({
+	render: function() {
+		var text = this.props.text;
+		var items = text.map(function(todo)
+			return {
+				<li> {todo} </li>
+			}); 
+		return (
+			<ul> {items} </ul>
+			);
+	}
+});
+
+var TodoApp = React.createClass({
+	getInitialState: function() {
+		return {text: []};
+	},
+	
+	render: function() {
+		<TodoList text: {this.state.text}
+	}
+	<input type="text"/>
+	<button type = "submit" onClick = {addText}/>
+
+	addText: function() {
+		var todo = document.getElementById("todo-container").value;
+		var todoItem = this.state.text;
+		todoItem.push(todo);
+		this.setState({text: todoItem});
+	}
+});
+
+ReactDOM.render(<TodoApp/>, )
 
 /*1. ReactDOM provides all the dom-specific methods. This renders the react element into the container and returns the reffereence to the component. This controls the content that
 is displayed in the browser, by rendering the desired output into the reffered DOM.
