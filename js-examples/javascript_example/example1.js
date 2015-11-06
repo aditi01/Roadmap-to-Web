@@ -52,6 +52,22 @@ function arrayMinMap() {
 	console.log(mini);
 }
 
+function extractFeedValues() {
+	var extract = [];
+	feedArray.map(function(singleElement,i) {
+		extract[i] = {"name": singleElement.display_name, "channel":singleElement.channel_name};
+		// extract.push({"name": singleElement.display_name, "channel":singleElement.channel_name});
+	});
+
+	// var extract = feedArray.map(function(singleElement) {
+	// 	return {
+	// 		"name": singleElement.display_name, 
+	// 		"channel":singleElement.channel_name
+	// 	}
+	// });
+	console.log(extract);
+}
+
 
 //Increasing the least upvote in the array object by 1 using for-loop
 function increaseLeastFor() {
@@ -194,4 +210,5 @@ function spliceMethod() {
 // foreachMethod();
 // joinMethod();
 // sliceMethod();
-spliceMethod();
+// spliceMethod();
+extractFeedValues();
