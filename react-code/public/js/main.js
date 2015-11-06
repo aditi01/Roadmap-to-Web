@@ -24,7 +24,7 @@ var Timer = React.createClass({ //2.
 	render: function() {
 		return (
 			<div> Seconds Elapsed {this.state.secondsElapsed} </div>
-			);
+		);
 	}
 });
 
@@ -33,38 +33,57 @@ ReactDOM.render(<Timer/>, document.getElementById("timer-container"));
 //A simple and a basic TODO application
 
 var TodoList = React.createClass({
+	myFunction: function(greeting){
+		console.log(greeting);
+	},
 	render: function() {
 		var text = this.props.text;
-		var items = text.map(function(todo)
-			return {
+		var items = text.map( function(todo) {
+			return (
 				<li> {todo} </li>
-			}); 
+			);
+		});
+
 		return (
 			<ul> {items} </ul>
-			);
+		);
 	}
 });
 
 var TodoApp = React.createClass({
 	getInitialState: function() {
-		return {text: []};
+		return {
+			todoItems: []
+		};
 	},
 	
+	addText: function(event) {
+		this.refs.todoListOne.myFunction('good morning');
+		console.log(this.props.firstname)
+		console.log(event.currentTarget);
+		var todo = document.getElementById("input-data");
+		var items = this.state.todoItems;
+		items.push(todo.value);
+		this.setState({todoItems: items});
+		todo.value = "";
+	},
+
 	render: function() {
-		<TodoList text: {this.state.text}
+		console.log(this.props.lastname)
+		return (
+			<div>
+				Welcome, {this.props.firstname+" "+this.props.lastname}
+				<TodoList text= {this.state.todoItems} ref="todoListOne"/>
+				<TodoList text= {this.state.todoItems} ref="todoListTwo"/>
+				<input type="text" id="input-data"/>
+				<input type = "button" value="Submit" onClick = {this.addText}/>
+			</div>
+		);
 	}
-	<input type="text"/>
-	<button type = "submit" onClick = {addText}/>
 
-	addText: function() {
-		var todo = document.getElementById("todo-container").value;
-		var todoItem = this.state.text;
-		todoItem.push(todo);
-		this.setState({text: todoItem});
-	}
 });
-
-ReactDOM.render(<TodoApp/>, )
+var fullName = 'aditi lahiri'
+ReactDOM.render(<TodoApp firstname='aditi' lastname="lahiri"/>, document.getElementById("todo-container"));
 
 /*1. ReactDOM provides all the dom-specific methods. This renders the react element into the container and returns the reffereence to the component. This controls the content that
 is displayed in the browser, by rendering the desired output into the reffered DOM.
