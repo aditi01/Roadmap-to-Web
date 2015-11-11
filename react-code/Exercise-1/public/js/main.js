@@ -40,7 +40,7 @@ var TodoList = React.createClass({
 		var text = this.props.text;
 		var items = text.map( function(todo) {
 			return (
-				<li> {todo} </li>
+				<li> {todo.content +" "+ todo.date} </li>
 			);
 		});
 
@@ -63,7 +63,7 @@ var TodoApp = React.createClass({
 		console.log(event.currentTarget);
 		var todo = document.getElementById("input-data");
 		var items = this.state.todoItems;
-		items.push(todo.value);
+		items.push({content: todo.value, date: new Date()});
 		this.setState({todoItems: items});
 		todo.value = "";
 	},
@@ -74,7 +74,7 @@ var TodoApp = React.createClass({
 			<div>
 				Welcome, {this.props.firstname+" "+this.props.lastname}
 				<TodoList text= {this.state.todoItems} ref="todoListOne"/>
-				<TodoList text= {this.state.todoItems} ref="todoListTwo"/>
+				// <TodoList text= {this.state.todoItems} ref="todoListTwo"/>
 				<input type="text" id="input-data"/>
 				<input type = "button" value="Submit" onClick = {this.addText}/>
 			</div>
