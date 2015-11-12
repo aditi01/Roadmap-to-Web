@@ -6,12 +6,15 @@ var TodoList = React.createClass({
 		var text = this.props.text;
 		var items = text.map( function(todo) {
 			return (
-				<li> {todo.content +" "+ todo.date} </li>
+				<div>
+					<li> {todo.content +" "+ todo.date} </li>
+					<input type = "button" value="X"/>
+				</div>
 			);
 		});
 
 		return (
-			<ul> {items} </ul>
+				<ul> {items} </ul>
 		);
 	}
 });
@@ -23,31 +26,47 @@ var TodoApp = React.createClass({
 		};
 	},
 	
-	addText: function() {
-		// this.refs.todoListOne.myFunction('good morning');
-		// console.log(this.props.firstname)
-		// console.log(event.currentTarget);
-		var todo = document.getElementById("input-data");
-		var items = this.state.todoItems;
-		items.push({content: todo.value, date: new Date()});
-		this.setState({todoItems: items});
-		todo.value = "";
-	},
-
-	componentDidMount: function() {
+	getRequest: function() {
 		$.ajax({
 		type: 'GET',
-		url: '/posts',
+		url: '/todos',
 		dataType: "json",
 		success: function(result) {
 			console.log(result);
-			{this.addText};
+			this.setState({todoItems: result.output});
 		},
 		error: function(err) {
 			console.log(err);
 			document.getElementById("todo-container").innerHTML = "Data not retrieved";
 		}
 	});
+	},
+
+	addText: function() {
+		var todo = document.getElementById("input-data");
+		var items = this.state.todoItems;
+		items.push({content: todo.value, date: new Date()});
+		this.setState({todoItems: items});
+		todo.value = "";
+		console.log(todo);
+
+		$.ajax({
+		type: "POST",
+		url: "/todo/save",
+		data: items,
+		success: function(result) {
+			console.log(result);
+			this.getRequest();
+		},
+		dataType: "json",
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	},
+
+	componentDidMount: function() {
+		this.getRequest();
 	},
 
 	render: function() {
