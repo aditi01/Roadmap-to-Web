@@ -8,7 +8,7 @@ var TodoList = React.createClass({
 			return (
 				<div>
 					<li> {todo.content +" "+ todo.date} </li>
-					<input type = "button" value="X"/>
+					<input type = "button" value="X" onClick = {this.deleteText}/>
 				</div>
 			);
 		});
@@ -16,6 +16,39 @@ var TodoList = React.createClass({
 		return (
 				<ul> {items} </ul>
 		);
+	},
+
+	deleteText: function() {
+		$.ajax({
+		type: "POST",
+		url: "/todo/delete",
+		data: {content:todo.value, date: new Date()},
+		success: function(result) {
+			console.log(result);
+			that.getRequestDelete();
+		},
+		dataType: "json",
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	},
+
+	getRequestDelete: function() {
+		var that = this;
+		$.ajax({
+		type: 'GET',
+		url: '/todos/remove',
+		dataType: "json",
+		success: function(result) {
+			console.log(result);
+			that.setState({todoItems: result.output});
+		},
+		error: function(err) {
+			console.log(err);
+			document.getElementById("todo-container").innerHTML = "Data not deleted";
+		}
+	});
 	}
 });
 
@@ -27,13 +60,14 @@ var TodoApp = React.createClass({
 	},
 	
 	getRequest: function() {
+		var that = this;
 		$.ajax({
 		type: 'GET',
 		url: '/todos',
 		dataType: "json",
 		success: function(result) {
 			console.log(result);
-			this.setState({todoItems: result.output});
+			that.setState({todoItems: result.output});
 		},
 		error: function(err) {
 			console.log(err);
@@ -46,23 +80,24 @@ var TodoApp = React.createClass({
 		var todo = document.getElementById("input-data");
 		var items = this.state.todoItems;
 		items.push({content: todo.value, date: new Date()});
-		this.setState({todoItems: items});
-		todo.value = "";
-		console.log(todo);
+		// this.setState({todoItems: items});
+		console.log(todo.value);
+		var that = this;
 
 		$.ajax({
 		type: "POST",
 		url: "/todo/save",
-		data: items,
+		data: {content:todo.value, date: new Date()},
 		success: function(result) {
 			console.log(result);
-			this.getRequest();
+			that.getRequest();
 		},
 		dataType: "json",
 		error: function(err) {
 			console.log(err);
 		}
 	});
+		todo.value = "";
 	},
 
 	componentDidMount: function() {
@@ -70,10 +105,9 @@ var TodoApp = React.createClass({
 	},
 
 	render: function() {
-		// console.log(this.props.lastname)
 		return (
 			<div>
-				<TodoList text= {this.state.todoItems} ref="todoListOne"/>
+				<TodoList text= {this.state.todoItems} />
 				<input type="text" id="input-data"/>
 				<input type = "button" value="Submit" onClick = {this.addText}/>
 			</div>
