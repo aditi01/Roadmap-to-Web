@@ -3,12 +3,13 @@
 
 var TodoList = React.createClass({
 	render: function() {
+		var that = this;
 		var text = this.props.text;
 		var items = text.map( function(todo) {
 			return (
 				<div>
 					<li> {todo.content +" "+ todo.date} </li>
-					<input type = "button" value="X" onClick = {this.deleteText}/>
+					<input type = "button" value="X" onClick = {that.deleteText}/>
 				</div>
 			);
 		});
@@ -16,41 +17,9 @@ var TodoList = React.createClass({
 		return (
 				<ul> {items} </ul>
 		);
-	},
-
-	deleteText: function() {
-		$.ajax({
-		type: "POST",
-		url: "/todo/delete",
-		data: {content:todo.value, date: new Date()},
-		success: function(result) {
-			console.log(result);
-			that.getRequestDelete();
-		},
-		dataType: "json",
-		error: function(err) {
-			console.log(err);
-		}
-	});
-	},
-
-	getRequestDelete: function() {
-		var that = this;
-		$.ajax({
-		type: 'GET',
-		url: '/todos/remove',
-		dataType: "json",
-		success: function(result) {
-			console.log(result);
-			that.setState({todoItems: result.output});
-		},
-		error: function(err) {
-			console.log(err);
-			document.getElementById("todo-container").innerHTML = "Data not deleted";
-		}
-	});
 	}
 });
+
 
 var TodoApp = React.createClass({
 	getInitialState: function() {
@@ -98,6 +67,22 @@ var TodoApp = React.createClass({
 		}
 	});
 		todo.value = "";
+	},
+
+	deleteText: function() {
+		$.ajax({
+		type: "POST",
+		url: "/todo/delete",
+		data: {ObjectID: _id},
+		success: function(result) {
+			console.log(result);
+			that.getRequest();
+		},
+		dataType: "json",
+		error: function(err) {
+			console.log(err);
+		}
+	});
 	},
 
 	componentDidMount: function() {
