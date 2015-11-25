@@ -22,8 +22,8 @@ function initialize(app, db) {
 	});
 
 	app.post('/todo/save', function(req, res) { //POST ajax request to send the data from the browser to the server and stored in the database.
-		console.log("hello",req.body[_id]);
-		var obj = req.body[_id];
+		console.log("hello",req.body);
+		var obj = req.body;
 		console.log(obj);
 		var collection = db.collection('todoTable');
   	 	collection.insert(obj, function(err, result) {
@@ -35,8 +35,8 @@ function initialize(app, db) {
 	});
 
 	app.post('/todo/delete', function(req, res) { //POST ajax request to send the data from the browser to the server and stored in the database.
-		console.log("hello",req.body);
-		var obj = req.body;
+		console.log("hello",req.body[_id]);
+		var obj = req.body[_id];
 		console.log(req.body);
 		var collection = db.collection('todoTable');
   	 	collection.remove(obj, function(err, result) {

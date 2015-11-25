@@ -2,6 +2,11 @@
 //A simple and a basic TODO application
 
 var TodoList = React.createClass({
+	deleteTodo: function() {
+		var that = this;
+		that.props.deleteText();
+	},
+
 	render: function() {
 		var that = this;
 		var text = this.props.text;
@@ -9,7 +14,7 @@ var TodoList = React.createClass({
 			return (
 				<div>
 					<li> {todo.content +" "+ todo.date} </li>
-					<input type = "button" value="X" onClick = {that.deleteText}/>
+					<input type = "button" value="X" onClick = {that.deleteTodo.bind(that, [_id])} />
 				</div>
 			);
 		});
